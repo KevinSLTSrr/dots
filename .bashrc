@@ -9,7 +9,8 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
+alias x='clear'
+alias hy='hyprland'
 
 #PS1='[\[\033[01;36m\]\u@\h\[\033[00m\] \[\033[01;33m\]\w\[\033[00m\]] \A\n\[\033[01;32m\]$: '
 
