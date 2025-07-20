@@ -1,11 +1,20 @@
 #
 # ~/.bashrc
 #
+#export HYPRSHOT_DIR="$HOME/ScreenShots"
+export PATH="/home/kevin/.local/bin:$PATH"
+
+# Don't ignore hidden items.
+# export FZF_DEFAULT_COMMAND="find . -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
 
+HISTSIZE=5000
+HISTFILESIZE=5000
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -27,4 +36,4 @@ SAPPHIRE_FG='\[\033[38;2;116;199;236m\]'
 RESET_COLOR='\[\033[0m\]'
 
 # Set your PS1 variable
-PS1="${SAPPHIRE_FG}[\u@\h] ${PEACH_FG} \w ${MAUVE_FG}[\A]\n${GREEN_FG}  \$ ${RESET_COLOR}"
+PS1="${SAPPHIRE_FG}[\u@\h] ${PEACH_FG} \w ${MAUVE_FG}[\A]\n${GREEN_FG} -> \$ ${RESET_COLOR}"
