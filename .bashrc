@@ -35,5 +35,9 @@ SAPPHIRE_FG='\[\033[38;2;116;199;236m\]'
 # Define ANSI escape code to reset color
 RESET_COLOR='\[\033[0m\]'
 
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # Set your PS1 variable
-PS1="${SAPPHIRE_FG}[\u@\h] ${PEACH_FG} \w ${MAUVE_FG}[\A]\n${GREEN_FG} -> \$ ${RESET_COLOR}"
+PS1="${SAPPHIRE_FG}[\u@\h] ${PEACH_FG} \w\$(parse_git_branch) ${MAUVE_FG}[\A]\n${GREEN_FG} -> \$ ${RESET_COLOR}"
