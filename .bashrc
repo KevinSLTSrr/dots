@@ -13,8 +13,10 @@ export PATH="/home/kevin/.local/bin:$PATH"
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
-HISTSIZE=5000
-HISTFILESIZE=5000
+shopt -s histappend
+
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
